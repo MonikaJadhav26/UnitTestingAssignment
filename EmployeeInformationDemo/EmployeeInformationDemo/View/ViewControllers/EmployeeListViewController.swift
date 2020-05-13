@@ -12,25 +12,37 @@ class EmployeeListViewController: UIViewController {
 
     //MARK: - Outlets and Variables
     @IBOutlet weak var employeeListTableView: UITableView!
+    var employeeListViewModel = EmployeeListViewModel()
+
    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         setUpUI()
+        getEmployeeListFromURL()
     }
    
     //MARK: - Method for UI setup
     func setUpUI() {
         
         self.navigationController?.navigationBar.barTintColor = UIColor.red
-       // employeeListTableView.separatorStyle = .none
+        employeeListTableView.separatorStyle = .none
         employeeListTableView.rowHeight = UITableView.automaticDimension
-      //  employeeListTableView.backgroundColor = backgroundViewColor
         employeeListTableView.tableFooterView = UIView()
         employeeListTableView.delegate = self
         employeeListTableView.dataSource = self
        self.employeeListTableView.register(UINib.init(nibName: "EmployeeListTableViewCell", bundle: nil), forCellReuseIdentifier: kCellIdentifier)
     }
+    
+    //MARK: - Call to get all data server
+       func getEmployeeListFromURL() {
+           employeeListViewModel.fetchEmployeeData() {
+               DispatchQueue.main.async {
+                self.title = self.employeeListViewModel.getTitleForView()
+                  // self.tableView.reloadData()
+               }
+           }
+       }
 }
 
 extension EmployeeListViewController : UITableViewDelegate , UITableViewDataSource {

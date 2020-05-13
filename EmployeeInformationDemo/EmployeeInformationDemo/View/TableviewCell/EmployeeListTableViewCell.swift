@@ -11,6 +11,7 @@ import UIKit
 class EmployeeListTableViewCell: UITableViewCell {
     
     //MARK: - Outlets
+    @IBOutlet weak var backgroundContainerView: UIView!
     @IBOutlet weak var employeeNameLabel: UILabel!
     @IBOutlet weak var employeeAgeLabel: UILabel!
     @IBOutlet weak var employeeSalaryLabel: UILabel!
