@@ -80,7 +80,9 @@
                             <constraint firstItem="VWF-Tn-V0Y" firstAttribute="top" secondItem="jo6-9P-Zxb" secondAttribute="top" constant="9" id="6pq-pQ-GBn"/>
                             <constraint firstItem="KWh-Zn-gxa" firstAttribute="top" secondItem="rgx-JS-gTR" secondAttribute="bottom" constant="14" id="7V8-JO-YLz"/>
                             <constraint firstItem="58C-eo-hL9" firstAttribute="leading" secondItem="wQh-pw-fL4" secondAttribute="leading" id="Bu9-Dj-zfV"/>
+                            <constraint firstAttribute="bottom" secondItem="Dbv-C3-k4y" secondAttribute="bottom" constant="8" id="EBQ-Q8-Ptp"/>
                             <constraint firstItem="58C-eo-hL9" firstAttribute="top" secondItem="jo6-9P-Zxb" secondAttribute="top" constant="9" id="EPB-vM-g5z"/>
+                            <constraint firstAttribute="bottom" secondItem="wQh-pw-fL4" secondAttribute="bottom" constant="19" id="EUp-j0-JAj"/>
                             <constraint firstItem="VWF-Tn-V0Y" firstAttribute="height" secondItem="rgx-JS-gTR" secondAttribute="height" id="EgY-mT-X49"/>
                             <constraint firstAttribute="trailing" secondItem="58C-eo-hL9" secondAttribute="trailing" constant="20" symbolic="YES" id="GX0-Zi-T6t"/>
                             <constraint firstItem="VWF-Tn-V0Y" firstAttribute="leading" secondItem="rgx-JS-gTR" secondAttribute="leading" id="I5K-lP-qcj"/>
@@ -96,6 +98,7 @@
                             <constraint firstItem="rgx-JS-gTR" firstAttribute="top" secondItem="uWe-uA-vmb" secondAttribute="top" id="eeE-0J-gib"/>
                             <constraint firstItem="58C-eo-hL9" firstAttribute="leading" secondItem="uWe-uA-vmb" secondAttribute="leading" id="gTU-1b-KAw"/>
                             <constraint firstItem="58C-eo-hL9" firstAttribute="trailing" secondItem="wQh-pw-fL4" secondAttribute="trailing" id="igH-3p-u6P"/>
+                            <constraint firstAttribute="bottom" secondItem="KWh-Zn-gxa" secondAttribute="bottom" constant="19" id="nNo-qb-Un7"/>
                             <constraint firstItem="VWF-Tn-V0Y" firstAttribute="trailing" secondItem="KWh-Zn-gxa" secondAttribute="trailing" id="nsH-sp-Q7c"/>
                             <constraint firstItem="KWh-Zn-gxa" firstAttribute="top" secondItem="wQh-pw-fL4" secondAttribute="top" id="ueS-TE-SG7"/>
                         </constraints>

@@ -16,7 +16,7 @@ struct Constants {
     struct BaseURL {
         static let url = "http://dummy.restapiexample.com"
     }
-    struct API {
+    struct APIMethod {
         static let getEmployees = "/api/v1/employees"
         static let createEmployee = "/api/v1/create"
         static let deleteEmployee = "/api/v1/delete"

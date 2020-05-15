@@ -12,7 +12,7 @@ class APIClient {
     
     //MARK: - GET Method
     func getAllEmployeeList(completion: @escaping (Result<EmployeeDataModel, Error>) -> Void) {
-        let urlString = "\(Constants.BaseURL.url)\(Constants.API.getEmployees)"
+        let urlString = "\(Constants.BaseURL.url)\(Constants.APIMethod.getEmployees)"
         guard let serviceURL = URL.init(string: urlString) else { return }
         URLSession.shared.dataTask(with: serviceURL) { (data, response, error) in
             if let err = error {
@@ -34,7 +34,7 @@ class APIClient {
     
     //MARK: - POST Method
     func createNewEmployee(employee: EmployeeInfo, completion: @escaping (Result<CreateNewEmployeeDataModel, Error>) -> Void) {
-        let urlString = "\(Constants.BaseURL.url)\(Constants.API.createEmployee)"
+        let urlString = "\(Constants.BaseURL.url)\(Constants.APIMethod.createEmployee)"
         guard let serviceURL = URL.init(string: urlString) else { return }
         var request = URLRequest(url: serviceURL)
         request.httpMethod = Constants.post
@@ -61,7 +61,7 @@ class APIClient {
     
     //MARK: - DELETE Method
     func deleteEmployee(employeeID: Int, completion: @escaping (Result<DeleteEmployeeDataModel, Error>) -> Void) {
-        let urlString = "\(Constants.BaseURL.url)\(Constants.API.deleteEmployee)/\(employeeID)"
+        let urlString = "\(Constants.BaseURL.url)\(Constants.APIMethod.deleteEmployee)/\(employeeID)"
         guard let serviceURL = URL.init(string: urlString) else { return }
         var request = URLRequest(url: serviceURL)
         request.httpMethod = Constants.delete

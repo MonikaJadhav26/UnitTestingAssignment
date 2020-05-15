@@ -103,7 +103,7 @@ extension EmployeeListViewController : UITableViewDelegate , UITableViewDataSour
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 120
+        return UITableView.automaticDimension
     }
     
 }
@@ -119,11 +119,11 @@ extension EmployeeListViewController : UISearchBarDelegate {
     }
     
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-//        employeeListViewModel.searchEmployee(with: searchText) {
-//            self.employeeListTableView.reloadData()
-//            if searchText.isEmpty {
-//                searchBar.resignFirstResponder()
-//            }
-//        }
+        employeeListViewModel.searchEmployee(with: searchText) {
+            self.employeeListTableView.reloadData()
+            if searchText.isEmpty {
+                searchBar.resignFirstResponder()
+            }
+        }
     }
 }
