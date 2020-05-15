@@ -23,9 +23,12 @@ struct Constants {
     }
     
     static let post = "POST"
+    static let delete = "DELETE"
     static let applicationJson = "application/json"
     static let contentType = "Content-Type"
     static let kCellIdentifier = "EmployeeListCell"
+    static let ok = "OK"
+    static let errorTitle = "Error"
     static let defaultImage = UIImage(named: "default")
     static let backgroundViewColor = UIColor(named: "backViewColour")
     static let cellLabelTextColor = UIColor(named: "textColour")

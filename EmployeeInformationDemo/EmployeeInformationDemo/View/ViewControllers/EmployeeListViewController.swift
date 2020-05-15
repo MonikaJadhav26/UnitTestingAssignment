@@ -13,6 +13,7 @@ class EmployeeListViewController: UIViewController {
     //MARK: - Outlets and Variables
     @IBOutlet weak var employeeListTableView: UITableView!
     var employeeListViewModel = EmployeeListViewModel()
+    var deleteEmployeeViewModel = DeleteEmployeeViewModel()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -52,6 +53,12 @@ class EmployeeListViewController: UIViewController {
         }
     }
     
+    func showAlert(message: String, action: UIAlertAction) {
+        let alert = UIAlertController(title: Constants.errorTitle, message: message, preferredStyle: .alert)
+        alert.addAction(action)
+        self.present(alert, animated: true, completion: nil)
+    }
+    
 }
 
 extension EmployeeListViewController : UITableViewDelegate , UITableViewDataSource {
@@ -75,6 +82,23 @@ extension EmployeeListViewController : UITableViewDelegate , UITableViewDataSour
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if (editingStyle == .delete) {
+            let employee = employeeListViewModel.employeeData[indexPath.row]
+            deleteEmployeeViewModel.deleteEmployee(employeeID: Int(employee.id ?? "") ?? 0) { (result) in
+                switch(result) {
+                case .success(let result):
+                    if result.status == "success" {
+                        self.employeeListTableView.beginUpdates()
+                        self.employeeListViewModel.employeeData.remove(at: indexPath.row)
+                        self.employeeListTableView.deleteRows(at: [indexPath], with: .fade)
+                        self.employeeListTableView.endUpdates()
+                    } else {
+                        self.showAlert(message: result.message, action: UIAlertAction(title: Constants.ok, style: .default, handler: nil))
+                    }
+                    
+                case .failure(let error):
+                    self.showAlert(message: error.localizedDescription, action: UIAlertAction(title: Constants.ok, style: .default, handler: nil))
+                }
+            }
         }
     }
     
