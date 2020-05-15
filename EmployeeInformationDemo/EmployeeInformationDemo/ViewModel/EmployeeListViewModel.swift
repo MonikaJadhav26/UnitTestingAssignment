@@ -13,11 +13,18 @@ class EmployeeListViewModel : NSObject {
     var apiCallObject: APIClient = APIClient()
     var employeeData : [Data] = [Data]()
     
-    func fetchEmployeeData(completion: @escaping () -> ()) {
-        apiCallObject.getAllEmployeeList(completion: {(employeeDictionary, isSucces) in
-            self.employeeData = employeeDictionary?.data ?? []
-            completion()
-        })
+    func fetchEmployeeData(completion: @escaping (Result<Bool, Error>) -> Void) {
+        apiCallObject.getAllEmployeeList { (result) in
+            DispatchQueue.main.async {
+                switch(result) {
+                case .success(let result):
+                    self.employeeData = result.data
+                    completion(.success(true))
+                case .failure(let error):
+                    completion(.failure(error))
+                }
+            }
+        }
     }
     
     func getTitleForView() -> String {

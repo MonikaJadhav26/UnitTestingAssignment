@@ -14,9 +14,13 @@
 		D84A0142246AD6D10044E6F6 /* EmployeeListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D84A0141246AD6D10044E6F6 /* EmployeeListTableViewCell.xib */; };
 		D84A0144246BAF0D0044E6F6 /* EmployeeDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D84A0143246BAF0D0044E6F6 /* EmployeeDataModel.swift */; };
 		D84A0146246BB0D10044E6F6 /* EmployeeListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D84A0145246BB0D10044E6F6 /* EmployeeListViewModel.swift */; };
+		D84A0148246BE15A0044E6F6 /* UITextField+DoneButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D84A0147246BE15A0044E6F6 /* UITextField+DoneButton.swift */; };
+		D84A014A246BF89F0044E6F6 /* CreateEmployeeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D84A0149246BF89F0044E6F6 /* CreateEmployeeViewModel.swift */; };
+		D84A014C246BF8B00044E6F6 /* DeleteEmployeeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D84A014B246BF8B00044E6F6 /* DeleteEmployeeViewModel.swift */; };
 		D84C27F824697E2200AA135C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D84C27F724697E2200AA135C /* Main.storyboard */; };
 		D84C27FA24697E3300AA135C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D84C27F924697E3300AA135C /* LaunchScreen.storyboard */; };
 		D84C27FD24697F6B00AA135C /* EmployeeListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D84C27FC24697F6B00AA135C /* EmployeeListViewController.swift */; };
+		D8D90C2F246E6FFC00A9588B /* CreateNewEmployeeDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8D90C2E246E6FFB00A9588B /* CreateNewEmployeeDataModel.swift */; };
 		D8FEF0F924695EB800673CA0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8FEF0F824695EB800673CA0 /* AppDelegate.swift */; };
 		D8FEF10224695EBE00673CA0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D8FEF10124695EBE00673CA0 /* Assets.xcassets */; };
 		D8FEF11024695EBF00673CA0 /* EmployeeInformationDemoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8FEF10F24695EBF00673CA0 /* EmployeeInformationDemoTests.swift */; };
@@ -48,9 +52,13 @@
 		D84A0141246AD6D10044E6F6 /* EmployeeListTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EmployeeListTableViewCell.xib; sourceTree = "<group>"; };
 		D84A0143246BAF0D0044E6F6 /* EmployeeDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeeDataModel.swift; sourceTree = "<group>"; };
 		D84A0145246BB0D10044E6F6 /* EmployeeListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeeListViewModel.swift; sourceTree = "<group>"; };
+		D84A0147246BE15A0044E6F6 /* UITextField+DoneButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+DoneButton.swift"; sourceTree = "<group>"; };
+		D84A0149246BF89F0044E6F6 /* CreateEmployeeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateEmployeeViewModel.swift; sourceTree = "<group>"; };
+		D84A014B246BF8B00044E6F6 /* DeleteEmployeeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteEmployeeViewModel.swift; sourceTree = "<group>"; };
 		D84C27F724697E2200AA135C /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		D84C27F924697E3300AA135C /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D84C27FC24697F6B00AA135C /* EmployeeListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeeListViewController.swift; sourceTree = "<group>"; };
+		D8D90C2E246E6FFB00A9588B /* CreateNewEmployeeDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateNewEmployeeDataModel.swift; sourceTree = "<group>"; };
 		D8FEF0F524695EB800673CA0 /* EmployeeInformationDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EmployeeInformationDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D8FEF0F824695EB800673CA0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D8FEF10124695EBE00673CA0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -100,6 +108,7 @@
 			isa = PBXGroup;
 			children = (
 				D84A0143246BAF0D0044E6F6 /* EmployeeDataModel.swift */,
+				D8D90C2E246E6FFB00A9588B /* CreateNewEmployeeDataModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -108,6 +117,8 @@
 			isa = PBXGroup;
 			children = (
 				D84A0145246BB0D10044E6F6 /* EmployeeListViewModel.swift */,
+				D84A0149246BF89F0044E6F6 /* CreateEmployeeViewModel.swift */,
+				D84A014B246BF8B00044E6F6 /* DeleteEmployeeViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -126,6 +137,7 @@
 			isa = PBXGroup;
 			children = (
 				D84A013D246A997A0044E6F6 /* Constants.swift */,
+				D84A0147246BE15A0044E6F6 /* UITextField+DoneButton.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -351,9 +363,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D84A014C246BF8B00044E6F6 /* DeleteEmployeeViewModel.swift in Sources */,
 				D84A0136246A96420044E6F6 /* CreateEmployeeViewController.swift in Sources */,
 				D84A0144246BAF0D0044E6F6 /* EmployeeDataModel.swift in Sources */,
 				D84C27FD24697F6B00AA135C /* EmployeeListViewController.swift in Sources */,
+				D8D90C2F246E6FFC00A9588B /* CreateNewEmployeeDataModel.swift in Sources */,
+				D84A0148246BE15A0044E6F6 /* UITextField+DoneButton.swift in Sources */,
+				D84A014A246BF89F0044E6F6 /* CreateEmployeeViewModel.swift in Sources */,
 				D8FEF0F924695EB800673CA0 /* AppDelegate.swift in Sources */,
 				D84A0138246A987C0044E6F6 /* APIClient.swift in Sources */,
 				D84A013B246A99600044E6F6 /* EmployeeListTableViewCell.swift in Sources */,
@@ -522,7 +538,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = sdf.EmployeeInformationDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -540,7 +556,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = sdf.EmployeeInformationDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

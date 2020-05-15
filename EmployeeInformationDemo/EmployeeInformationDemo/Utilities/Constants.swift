@@ -11,7 +11,24 @@ import Foundation
 import Foundation
 import UIKit
 
-let kCellIdentifier = "EmployeeListCell"
-let defaultImage = UIImage(named: "default")
-let backgroundViewColor = UIColor(named: "backViewColour")
-let cellLabelTextColor = UIColor(named: "textColour")
+struct Constants {
+    
+    struct BaseURL {
+        static let url = "http://dummy.restapiexample.com"
+    }
+    struct API {
+        static let getEmployees = "/api/v1/employees"
+        static let createEmployee = "/api/v1/create"
+        static let deleteEmployee = "/api/v1/delete"
+    }
+    
+    static let post = "POST"
+    static let applicationJson = "application/json"
+    static let contentType = "Content-Type"
+    static let kCellIdentifier = "EmployeeListCell"
+    static let defaultImage = UIImage(named: "default")
+    static let backgroundViewColor = UIColor(named: "backViewColour")
+    static let cellLabelTextColor = UIColor(named: "textColour")
+    static let grayButtonColour = UIColor(red: 239/255, green: 239/255, blue: 239/255, alpha: 1)
+    static let greenButtonColour = UIColor(red: 38/255, green: 146/255, blue: 66/255, alpha: 1)
+}

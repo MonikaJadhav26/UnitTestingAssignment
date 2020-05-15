@@ -16,16 +16,21 @@ class EmployeeListTableViewCell: UITableViewCell {
     @IBOutlet weak var employeeAgeLabel: UILabel!
     @IBOutlet weak var employeeSalaryLabel: UILabel!
     @IBOutlet weak var employeeProfileImage: UIImageView!
-
-
+    
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        backgroundContainerView.layer.cornerRadius = 5
+        backgroundContainerView.layer.shadowColor = UIColor.black.cgColor
+        backgroundContainerView.layer.shadowOpacity = 1
+        backgroundContainerView.layer.shadowOffset = .zero
+        backgroundContainerView.layer.shadowRadius = 5
     }
-
+    
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
+        
         // Configure the view for the selected state
     }
     
