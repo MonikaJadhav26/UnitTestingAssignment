@@ -73,7 +73,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" red="0.94685876351733755" green="0.93491570331817131" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" name="cellBackgroundColour"/>
                         <constraints>
                             <constraint firstItem="58C-eo-hL9" firstAttribute="trailing" secondItem="uWe-uA-vmb" secondAttribute="trailing" id="0Ap-eF-RUV"/>
                             <constraint firstItem="Dbv-C3-k4y" firstAttribute="top" secondItem="jo6-9P-Zxb" secondAttribute="top" constant="8" id="2ED-nr-Qei"/>
@@ -129,8 +129,11 @@
         <namedColor name="backViewColour">
             <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
+        <namedColor name="cellBackgroundColour">
+            <color red="0.94509803921568625" green="0.93333333333333335" blue="0.98039215686274506" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <namedColor name="grayTextColour">
-            <color red="0.55699998140335083" green="0.55699998140335083" blue="0.55699998140335083" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.31600001454353333" green="0.31600001454353333" blue="0.31600001454353333" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>
 </document>

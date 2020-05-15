@@ -27,21 +27,25 @@
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="K71-2K-ewo"/>
                                 </connections>
                             </searchBar>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="gVR-js-i9X">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="gVR-js-i9X">
                                 <rect key="frame" x="0.0" y="132" width="414" height="764"/>
                                 <color key="backgroundColor" name="backViewColour"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="EmployeeListCell" id="ux3-Zf-7FX" customClass="EmployeeListTableViewCell" customModule="EmployeeInformationDemo" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
+                                        <rect key="frame" x="0.0" y="28" width="414" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ux3-Zf-7FX" id="FUA-uX-3E9">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <color key="backgroundColor" name="backViewColour"/>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" name="backViewColour"/>
                                     </tableViewCell>
                                 </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="Rl8-Db-dG7"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="KzH-Qy-pVp"/>
+                                </connections>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" name="backViewColour"/>
@@ -59,7 +63,7 @@
                     <navigationItem key="navigationItem" id="fqG-4L-4fZ">
                         <barButtonItem key="rightBarButtonItem" style="done" systemItem="add" id="ngj-YD-6ik">
                             <connections>
-                                <action selector="addButtonClicked:" destination="BYZ-38-t0r" id="lcx-JX-xLI"/>
+                                <action selector="addButtonClicked:" destination="BYZ-38-t0r" id="g9b-fc-vbd"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -81,7 +85,7 @@
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PQh-XY-hQf">
                                 <rect key="frame" x="16" y="60" width="185" height="30"/>
-                                <color key="backgroundColor" name="backViewColour"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="PTy-rz-zzJ"/>
                                     <constraint firstAttribute="width" constant="185" id="puq-gI-aum"/>
@@ -92,14 +96,14 @@
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Age" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5og-eI-xrV">
                                 <rect key="frame" x="16" y="166" width="185" height="21"/>
-                                <color key="backgroundColor" name="backViewColour"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                 <color key="textColor" name="textColour"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Salary" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pz8-qH-Uiz">
                                 <rect key="frame" x="16" y="265" width="185" height="21"/>
-                                <color key="backgroundColor" name="backViewColour"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                 <color key="textColor" name="textColour"/>
                                 <nil key="highlightedColor"/>
@@ -142,7 +146,7 @@
                                     <color key="titleColor" name="textColour"/>
                                 </state>
                                 <connections>
-                                    <action selector="createButtonClicked:" destination="h9a-Uc-THR" eventType="touchUpInside" id="pMb-mT-aYS"/>
+                                    <action selector="createButtonClicked:" destination="h9a-Uc-THR" eventType="touchUpInside" id="SKp-Pd-Tkg"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -218,7 +222,7 @@
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </namedColor>
         <namedColor name="textFieldBackgroundColour">
-            <color red="0.93725490196078431" green="0.93725490196078431" blue="0.93725490196078431" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.93699997663497925" green="0.93699997663497925" blue="0.93699997663497925" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>
 </document>

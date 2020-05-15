@@ -8,33 +8,34 @@
 
 import UIKit
 
-class EmployeeListViewController: UIViewController {
+class EmployeeListViewController: BaseViewController {
     
     //MARK: - Outlets and Variables
     @IBOutlet weak var employeeListTableView: UITableView!
     var employeeListViewModel = EmployeeListViewModel()
     var deleteEmployeeViewModel = DeleteEmployeeViewModel()
     
+    //MARK: - View Lifecycle Methods
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         setUpUI()
-        getEmployeeListFromURL()
     }
+    
+     override func viewWillAppear(_ animated: Bool) {
+       super.viewWillAppear(animated)
+        getEmployeeListFromURL()
+     }
     
     //MARK: - Method for UI setup
     func setUpUI() {
-        
-        employeeListTableView.separatorStyle = .none
         employeeListTableView.rowHeight = UITableView.automaticDimension
-        employeeListTableView.tableFooterView = UIView()
-        employeeListTableView.delegate = self
-        employeeListTableView.dataSource = self
-        self.employeeListTableView.register(UINib.init(nibName: "EmployeeListTableViewCell", bundle: nil), forCellReuseIdentifier: Constants.kCellIdentifier)
+        self.employeeListTableView.register(UINib.init(nibName: Constants.employeeListTableCell, bundle: nil), forCellReuseIdentifier: Constants.kCellIdentifier)
     }
-        
+    
+    //MARK: - Add Button Action
     @IBAction func addButtonClicked(_ sender: UIBarButtonItem) {
-        let createViewController = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "CreateEmployeeViewController") as? CreateEmployeeViewController
+        let createViewController = UIStoryboard.init(name: Constants.stodyboard, bundle: Bundle.main).instantiateViewController(withIdentifier: Constants.createEmployeeView) as? CreateEmployeeViewController
         self.navigationController?.pushViewController(createViewController!, animated: true)
     }
     
@@ -43,24 +44,17 @@ class EmployeeListViewController: UIViewController {
         employeeListViewModel.fetchEmployeeData { result in
             switch(result) {
             case .success:
-                self.title = self.employeeListViewModel.getTitleForView()
+                self.getTitleForView(navigationTitle: Constants.employeeListTitle)
                 self.employeeListTableView.reloadData()
             case .failure(let error):
-                let alert = UIAlertController(title: "Error", message: error.localizedDescription , preferredStyle: .alert)
-                alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
-                self.present(alert, animated: true, completion: nil)
+                self.showAlert(message: error.localizedDescription, action: UIAlertAction(title: Constants.ok, style: .default, handler: nil))
             }
         }
     }
     
-    func showAlert(message: String, action: UIAlertAction) {
-        let alert = UIAlertController(title: Constants.errorTitle, message: message, preferredStyle: .alert)
-        alert.addAction(action)
-        self.present(alert, animated: true, completion: nil)
-    }
-    
 }
 
+//MARK: - UITableview delegate and datasource methods
 extension EmployeeListViewController : UITableViewDelegate , UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return employeeListViewModel.getNumberOfFacts(section: section)
@@ -86,7 +80,7 @@ extension EmployeeListViewController : UITableViewDelegate , UITableViewDataSour
             deleteEmployeeViewModel.deleteEmployee(employeeID: Int(employee.id ?? "") ?? 0) { (result) in
                 switch(result) {
                 case .success(let result):
-                    if result.status == "success" {
+                    if result.status == Constants.success {
                         self.employeeListTableView.beginUpdates()
                         self.employeeListViewModel.employeeData.remove(at: indexPath.row)
                         self.employeeListTableView.deleteRows(at: [indexPath], with: .fade)
@@ -108,6 +102,7 @@ extension EmployeeListViewController : UITableViewDelegate , UITableViewDataSour
     
 }
 
+//MARK: - UISearchBar delegate methods
 extension EmployeeListViewController : UISearchBarDelegate {
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar)  {

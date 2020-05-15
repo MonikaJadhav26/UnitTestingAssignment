@@ -27,8 +27,15 @@ struct Constants {
     static let applicationJson = "application/json"
     static let contentType = "Content-Type"
     static let kCellIdentifier = "EmployeeListCell"
+    static let employeeListTitle = "Employee List"
+    static let createNewEmployeeTitle = "Create New Employee"
     static let ok = "OK"
+    static let stodyboard = "Main"
+    static let employeeListView = "EmployeeListViewController"
+    static let createEmployeeView = "CreateEmployeeViewController"
+    static let employeeListTableCell = "EmployeeListTableViewCell"
     static let errorTitle = "Error"
+    static let success = "success"
     static let defaultImage = UIImage(named: "default")
     static let backgroundViewColor = UIColor(named: "backViewColour")
     static let cellLabelTextColor = UIColor(named: "textColour")

@@ -8,7 +8,7 @@
 
 import UIKit
 
-class CreateEmployeeViewController: UIViewController {
+class CreateEmployeeViewController: BaseViewController {
     
     //MARK: - Outlets and Variables
     @IBOutlet weak var nameTextField: UITextField!
@@ -22,8 +22,7 @@ class CreateEmployeeViewController: UIViewController {
     @IBOutlet weak var createButton: UIButton!
     var createEmployeeViewModel = CreateEmployeeViewModel()
 
-
-    
+    //MARK: - View Lifecycle Methods
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -33,13 +32,28 @@ class CreateEmployeeViewController: UIViewController {
     //MARK: - Method for UI setup
     func setUpUI() {
         createButton.isEnabled = false
-        self.title = "Create New Employee"
+        self.getTitleForView(navigationTitle: Constants.createNewEmployeeTitle)
+        nameTextField.addTarget(self, action: #selector(CreateEmployeeViewController.textFieldDidChange(_:)), for: .editingChanged)
+        ageTextField.addTarget(self, action: #selector(CreateEmployeeViewController.textFieldDidChange(_:)), for: .editingChanged)
+        salaryTextField.addTarget(self, action: #selector(CreateEmployeeViewController.textFieldDidChange(_:)), for: .editingChanged)
     }
     
+    @objc func textFieldDidChange(_ textField: UITextField) {
+        print(textField.text!)
+        if !((nameTextField.text)?.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty)! && !((ageTextField.text)?.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty)! && !((salaryTextField.text)?.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty)!{
+            createButton.isEnabled = true
+            createButton.backgroundColor = Constants.greenButtonColour
+        } else {
+            createButton.isEnabled = false
+            createButton.backgroundColor = .lightGray
+        }
+        
+    }
     @objc func doneButtonTappedForAgeTextField() {
         salaryTextField.becomeFirstResponder()
     }
     
+    //MARK: - Create Button Action Method
     @IBAction func createButtonClicked(_ sender: UIButton) {
         
         let newEmployeeInfo = EmployeeInfo(name: nameTextField.text, salary: salaryTextField.text, age: ageTextField.text, id: "")
@@ -49,31 +63,16 @@ class CreateEmployeeViewController: UIViewController {
                    case .success:
                        self.navigationController?.popToRootViewController(animated: true)
                    case .failure(let error):
-                       let alert = UIAlertController(title: "Error", message: error.localizedDescription , preferredStyle: .alert)
-                       alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
-                       self.present(alert, animated: true, completion: nil)
+                     self.showAlert(message: error.localizedDescription, action: UIAlertAction(title: Constants.ok, style: .default, handler: nil))
                    }
                }
     }
     
 }
 
+//MARK: - UITextField Delegate Methods
 extension CreateEmployeeViewController : UITextFieldDelegate {
-    
-    
-    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
-        print(textField.text ?? "")
-        if nameTextField.text!.count < 1  || ageTextField.text!.count < 1 || salaryTextField.text!.count < 1 {
-            createButton.isEnabled = false
-            createButton.backgroundColor = .lightGray
-        } else {
-            createButton.isEnabled = true
-            createButton.backgroundColor = Constants.greenButtonColour
-        }
-       
-        return true
-    }
-    
+   
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         if textField == nameTextField {
             ageTextField.becomeFirstResponder()

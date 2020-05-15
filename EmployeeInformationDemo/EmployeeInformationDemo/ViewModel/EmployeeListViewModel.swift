@@ -30,9 +30,7 @@ class EmployeeListViewModel : NSObject {
         }
     }
     
-    func getTitleForView() -> String {
-        return "Employee List"
-    }
+   
     
     func getNumberOfFacts(section: Int) -> Int {
         return self.employeeData.count

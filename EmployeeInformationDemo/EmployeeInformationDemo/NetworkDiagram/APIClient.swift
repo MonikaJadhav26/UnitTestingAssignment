@@ -10,7 +10,7 @@ import Foundation
 
 class APIClient {
     
-    //MARK: - GET Method
+    //MARK: - GET Method For Fetching Employee Data from Server
     func getAllEmployeeList(completion: @escaping (Result<EmployeeDataModel, Error>) -> Void) {
         let urlString = "\(Constants.BaseURL.url)\(Constants.APIMethod.getEmployees)"
         guard let serviceURL = URL.init(string: urlString) else { return }
@@ -32,7 +32,7 @@ class APIClient {
             }.resume()
     }
     
-    //MARK: - POST Method
+    //MARK: - POST Method For Creating New Employee
     func createNewEmployee(employee: EmployeeInfo, completion: @escaping (Result<CreateNewEmployeeDataModel, Error>) -> Void) {
         let urlString = "\(Constants.BaseURL.url)\(Constants.APIMethod.createEmployee)"
         guard let serviceURL = URL.init(string: urlString) else { return }
@@ -59,7 +59,7 @@ class APIClient {
             }.resume()
     }
     
-    //MARK: - DELETE Method
+    //MARK: - DELETE Method For Deleting Employee Record
     func deleteEmployee(employeeID: Int, completion: @escaping (Result<DeleteEmployeeDataModel, Error>) -> Void) {
         let urlString = "\(Constants.BaseURL.url)\(Constants.APIMethod.deleteEmployee)/\(employeeID)"
         guard let serviceURL = URL.init(string: urlString) else { return }
