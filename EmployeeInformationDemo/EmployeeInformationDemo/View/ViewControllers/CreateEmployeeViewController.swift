@@ -31,7 +31,13 @@ class CreateEmployeeViewController: BaseViewController {
     
     //MARK: - Method for UI setup
     func setUpUI() {
+        self.addActivityIndicator()
         createButton.isEnabled = false
+        
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self,action: #selector(self.dismissKeyboard))
+        tap.cancelsTouchesInView = false
+        view.addGestureRecognizer(tap)
+        
         self.getTitleForView(navigationTitle: Constants.createNewEmployeeTitle)
         nameTextField.addTarget(self, action: #selector(CreateEmployeeViewController.textFieldDidChange(_:)), for: .editingChanged)
         ageTextField.addTarget(self, action: #selector(CreateEmployeeViewController.textFieldDidChange(_:)), for: .editingChanged)
@@ -46,21 +52,27 @@ class CreateEmployeeViewController: BaseViewController {
             createButton.isEnabled = false
             createButton.backgroundColor = .lightGray
         }
-        
     }
+    
     @objc func doneButtonTappedForAgeTextField() {
         salaryTextField.becomeFirstResponder()
     }
+
+    @objc func dismissKeyboard() {
+           view.endEditing(true)
+       }
     
     //MARK: - Create Button Action Method
     @IBAction func createButtonClicked(_ sender: UIButton) {
-        
+        self.showActivityIndicator()
         let newEmployeeInfo = EmployeeInfo(name: nameTextField.text ?? "", salary: String(format: "%d", salaryTextField.text ?? ""), age: String(format: "%d", ageTextField.text ?? ""), id: 0)
         createEmployeeViewModel.createNewEmployee(newEmployee: newEmployeeInfo) { result in
                    switch(result) {
                    case .success:
-                       self.navigationController?.popToRootViewController(animated: true)
+                    self.hideActivityIndicator()
+                    self.showAlert(message: "Employee created successfully!", action: UIAlertAction(title: Constants.ok, style: .default, handler: nil))
                    case .failure(let error):
+                    self.hideActivityIndicator()
                      self.showAlert(message: error.localizedDescription, action: UIAlertAction(title: Constants.ok, style: .default, handler: nil))
                    }
                }

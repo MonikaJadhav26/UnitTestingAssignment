@@ -10,6 +10,10 @@ import UIKit
 
 class BaseViewController: UIViewController {
 
+    
+    var activityIndicator = UIActivityIndicatorView()
+
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -27,5 +31,19 @@ class BaseViewController: UIViewController {
     func getTitleForView(navigationTitle : String?) {
         self.title = navigationTitle
     }
+    
+    func addActivityIndicator() {
+        activityIndicator = UIActivityIndicatorView(style: UIActivityIndicatorView.Style.gray)
+        activityIndicator.center =  CGPoint(x: self.view.bounds.midX, y: self.view.bounds.midY)
+        activityIndicator.hidesWhenStopped = true
+        view.addSubview(activityIndicator)
+    }
 
+    func showActivityIndicator() {
+        activityIndicator.startAnimating()
+    }
+    
+    func hideActivityIndicator() {
+        activityIndicator.stopAnimating()
+    }
 }

@@ -31,6 +31,18 @@ class EmployeeListViewController: BaseViewController {
     func setUpUI() {
         employeeListTableView.rowHeight = UITableView.automaticDimension
         self.employeeListTableView.register(UINib.init(nibName: Constants.employeeListTableCell, bundle: nil), forCellReuseIdentifier: Constants.kCellIdentifier)
+        self.addActivityIndicator()
+        
+        let refreshControl = UIRefreshControl()
+        refreshControl.addTarget(self, action: #selector(pullToRefresh), for: .valueChanged)
+        employeeListTableView.refreshControl = refreshControl
+    }
+    
+    //MARK: - Pull to refresh method
+    @objc func pullToRefresh(refreshControl: UIRefreshControl) {
+        employeeListTableView.reloadData()
+        getEmployeeListFromURL()
+        refreshControl.endRefreshing()
     }
     
     //MARK: - Add Button Action
@@ -41,12 +53,15 @@ class EmployeeListViewController: BaseViewController {
     
     //MARK: - Call to get all data server
     func getEmployeeListFromURL() {
+        self.showActivityIndicator()
         employeeListViewModel.fetchEmployeeData { result in
             switch(result) {
             case .success:
+                self.hideActivityIndicator()
                 self.getTitleForView(navigationTitle: Constants.employeeListTitle)
                 self.employeeListTableView.reloadData()
             case .failure(let error):
+                self.hideActivityIndicator()
                 self.showAlert(message: error.localizedDescription, action: UIAlertAction(title: Constants.ok, style: .default, handler: nil))
             }
         }
