@@ -23,6 +23,9 @@ struct Constants {
     static let employeeListTableCell = "EmployeeListTableViewCell"
     static let errorTitle = "Error"
     static let success = "success"
+    static let cresteEmployeeSuccessMessage = "Employee created successfully!"
+    static let message = "Message"
+    static let alert = "Alert"
     static let defaultImage = UIImage(named: "default")
     static let backgroundViewColor = UIColor(named: "backViewColour")
     static let cellLabelTextColor = UIColor(named: "textColour")

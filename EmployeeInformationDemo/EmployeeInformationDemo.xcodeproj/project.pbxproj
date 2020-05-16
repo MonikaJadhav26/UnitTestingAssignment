@@ -21,11 +21,14 @@
 		D84C27FA24697E3300AA135C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D84C27F924697E3300AA135C /* LaunchScreen.storyboard */; };
 		D84C27FD24697F6B00AA135C /* EmployeeListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D84C27FC24697F6B00AA135C /* EmployeeListViewController.swift */; };
 		D891FB03246EEC9700E4B5EE /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D891FB02246EEC9700E4B5EE /* BaseViewController.swift */; };
+		D891FB05246FE35E00E4B5EE /* APIConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = D891FB04246FE35E00E4B5EE /* APIConstants.swift */; };
 		D8D90C2F246E6FFC00A9588B /* CreateNewEmployeeDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8D90C2E246E6FFB00A9588B /* CreateNewEmployeeDataModel.swift */; };
 		D8D90C31246E772700A9588B /* DeleteEmployeeDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8D90C30246E772700A9588B /* DeleteEmployeeDataModel.swift */; };
+		D8DAA3CC24704BE2008875D3 /* EmployeeLocalJSON.json in Resources */ = {isa = PBXBuildFile; fileRef = D8DAA3CB24704BE1008875D3 /* EmployeeLocalJSON.json */; };
+		D8DAA3CE24705233008875D3 /* CreateEmployeeViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8DAA3CD24705233008875D3 /* CreateEmployeeViewModelTests.swift */; };
+		D8DAA3D024705259008875D3 /* EmployeeListViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8DAA3CF24705259008875D3 /* EmployeeListViewModelTests.swift */; };
 		D8FEF0F924695EB800673CA0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8FEF0F824695EB800673CA0 /* AppDelegate.swift */; };
 		D8FEF10224695EBE00673CA0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D8FEF10124695EBE00673CA0 /* Assets.xcassets */; };
-		D8FEF11024695EBF00673CA0 /* EmployeeInformationDemoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8FEF10F24695EBF00673CA0 /* EmployeeInformationDemoTests.swift */; };
 		D8FEF11B24695EBF00673CA0 /* EmployeeInformationDemoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8FEF11A24695EBF00673CA0 /* EmployeeInformationDemoUITests.swift */; };
 /* End PBXBuildFile section */
 
@@ -61,14 +64,17 @@
 		D84C27F924697E3300AA135C /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D84C27FC24697F6B00AA135C /* EmployeeListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeeListViewController.swift; sourceTree = "<group>"; };
 		D891FB02246EEC9700E4B5EE /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		D891FB04246FE35E00E4B5EE /* APIConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIConstants.swift; sourceTree = "<group>"; };
 		D8D90C2E246E6FFB00A9588B /* CreateNewEmployeeDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateNewEmployeeDataModel.swift; sourceTree = "<group>"; };
 		D8D90C30246E772700A9588B /* DeleteEmployeeDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteEmployeeDataModel.swift; sourceTree = "<group>"; };
+		D8DAA3CB24704BE1008875D3 /* EmployeeLocalJSON.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = EmployeeLocalJSON.json; sourceTree = "<group>"; };
+		D8DAA3CD24705233008875D3 /* CreateEmployeeViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateEmployeeViewModelTests.swift; sourceTree = "<group>"; };
+		D8DAA3CF24705259008875D3 /* EmployeeListViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeeListViewModelTests.swift; sourceTree = "<group>"; };
 		D8FEF0F524695EB800673CA0 /* EmployeeInformationDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EmployeeInformationDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D8FEF0F824695EB800673CA0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D8FEF10124695EBE00673CA0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D8FEF10624695EBF00673CA0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D8FEF10B24695EBF00673CA0 /* EmployeeInformationDemoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EmployeeInformationDemoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		D8FEF10F24695EBF00673CA0 /* EmployeeInformationDemoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeeInformationDemoTests.swift; sourceTree = "<group>"; };
 		D8FEF11124695EBF00673CA0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D8FEF11624695EBF00673CA0 /* EmployeeInformationDemoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EmployeeInformationDemoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D8FEF11A24695EBF00673CA0 /* EmployeeInformationDemoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeeInformationDemoUITests.swift; sourceTree = "<group>"; };
@@ -143,6 +149,7 @@
 			children = (
 				D84A013D246A997A0044E6F6 /* Constants.swift */,
 				D84A0147246BE15A0044E6F6 /* UITextField+DoneButton.swift */,
+				D8DAA3CB24704BE1008875D3 /* EmployeeLocalJSON.json */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -151,6 +158,7 @@
 			isa = PBXGroup;
 			children = (
 				D84A0137246A987C0044E6F6 /* APIClient.swift */,
+				D891FB04246FE35E00E4B5EE /* APIConstants.swift */,
 			);
 			path = NetworkDiagram;
 			sourceTree = "<group>";
@@ -222,8 +230,9 @@
 		D8FEF10E24695EBF00673CA0 /* EmployeeInformationDemoTests */ = {
 			isa = PBXGroup;
 			children = (
-				D8FEF10F24695EBF00673CA0 /* EmployeeInformationDemoTests.swift */,
 				D8FEF11124695EBF00673CA0 /* Info.plist */,
+				D8DAA3CD24705233008875D3 /* CreateEmployeeViewModelTests.swift */,
+				D8DAA3CF24705259008875D3 /* EmployeeListViewModelTests.swift */,
 			);
 			path = EmployeeInformationDemoTests;
 			sourceTree = "<group>";
@@ -341,6 +350,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D8DAA3CC24704BE2008875D3 /* EmployeeLocalJSON.json in Resources */,
 				D8FEF10224695EBE00673CA0 /* Assets.xcassets in Resources */,
 				D84A0142246AD6D10044E6F6 /* EmployeeListTableViewCell.xib in Resources */,
 				D84C27FA24697E3300AA135C /* LaunchScreen.storyboard in Resources */,
@@ -370,6 +380,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D84A014C246BF8B00044E6F6 /* DeleteEmployeeViewModel.swift in Sources */,
+				D891FB05246FE35E00E4B5EE /* APIConstants.swift in Sources */,
 				D84A0136246A96420044E6F6 /* CreateEmployeeViewController.swift in Sources */,
 				D84A0144246BAF0D0044E6F6 /* EmployeeDataModel.swift in Sources */,
 				D84C27FD24697F6B00AA135C /* EmployeeListViewController.swift in Sources */,
@@ -390,7 +401,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D8FEF11024695EBF00673CA0 /* EmployeeInformationDemoTests.swift in Sources */,
+				D8DAA3CE24705233008875D3 /* CreateEmployeeViewModelTests.swift in Sources */,
+				D8DAA3D024705259008875D3 /* EmployeeListViewModelTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

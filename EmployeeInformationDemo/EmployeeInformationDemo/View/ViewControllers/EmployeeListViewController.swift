@@ -101,7 +101,7 @@ extension EmployeeListViewController : UITableViewDelegate , UITableViewDataSour
                         self.employeeListTableView.deleteRows(at: [indexPath], with: .fade)
                         self.employeeListTableView.endUpdates()
                     } else {
-                        self.showAlert(message: result.message, title: "Alert" , action: UIAlertAction(title: Constants.ok, style: .default, handler: nil))
+                        self.showAlert(message: result.message, title: Constants.alert , action: UIAlertAction(title: Constants.ok, style: .default, handler: nil))
                     }
                     
                 case .failure(let error):

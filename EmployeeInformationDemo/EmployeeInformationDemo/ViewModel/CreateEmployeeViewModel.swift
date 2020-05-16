@@ -7,10 +7,12 @@
 //
 
 import Foundation
+import UIKit
 
 class CreateEmployeeViewModel : NSObject {
     
     var apiCallObject: APIClient = APIClient()
+    
     
     func createNewEmployee(newEmployee: EmployeeInfo ,completion: @escaping (Result<Bool, Error>) -> Void) {
         apiCallObject.createNewEmployee(employee: newEmployee) { (result) in
@@ -24,7 +26,7 @@ class CreateEmployeeViewModel : NSObject {
             }
         }
     }
-    
-    
+
 }
+
 

@@ -47,7 +47,9 @@ class CreateEmployeeViewController: BaseViewController {
     }
     
     @objc func textFieldDidChange(_ textField: UITextField) {
+        
         if !((nameTextField.text)?.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty)! && !((ageTextField.text)?.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty)! && !((salaryTextField.text)?.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty)!{
+            
             createButton.isEnabled = true
             createButton.backgroundColor = Constants.greenButtonColour
         } else {
@@ -64,15 +66,25 @@ class CreateEmployeeViewController: BaseViewController {
            view.endEditing(true)
        }
     
+    func resetTextField() {
+        nameTextField.text = ""
+        ageTextField.text = ""
+        salaryTextField.text = ""
+    }
+    
+    
     //MARK: - Create Button Action Method
     @IBAction func createButtonClicked(_ sender: UIButton) {
         self.showActivityIndicator()
-        let newEmployeeInfo = EmployeeInfo(name: nameTextField.text ?? "", salary: String(format: "%d", salaryTextField.text ?? ""), age: String(format: "%d", ageTextField.text ?? ""), id: 0)
+        
+        let newEmployeeInfo = EmployeeInfo(name: (nameTextField.text)?.trimmingCharacters(in: .whitespacesAndNewlines) ?? "", salary: (salaryTextField.text)?.trimmingCharacters(in: .whitespacesAndNewlines) ?? "", age: (ageTextField.text)?.trimmingCharacters(in: .whitespacesAndNewlines) ?? "", id: 0)
+        
         createEmployeeViewModel.createNewEmployee(newEmployee: newEmployeeInfo) { result in
                    switch(result) {
                    case .success:
                     self.hideActivityIndicator()
-                    self.showAlert(message: "Employee created successfully!",title : "Message", action: UIAlertAction(title: Constants.ok, style: .default, handler: nil))
+                    self.resetTextField()
+                    self.showAlert(message: Constants.cresteEmployeeSuccessMessage,title : Constants.message, action: UIAlertAction(title: Constants.ok, style: .default, handler: nil))
                    case .failure(let error):
                     self.hideActivityIndicator()
                     self.showAlert(message: error.localizedDescription, title: Constants.errorTitle, action: UIAlertAction(title: Constants.ok, style: .default, handler: nil))
