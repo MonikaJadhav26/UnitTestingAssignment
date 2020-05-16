@@ -10,11 +10,35 @@ import XCTest
 @testable import EmployeeInformationDemo
 
 class EmployeeInformationDemoTests: XCTestCase {
+    
+    var employeeListViewModel = EmployeeListViewModel()
+    let indexPath = IndexPath(row: 0, section: 0)
+
 
     override func setUp() {
         // Put setup code here. This method is called before the invocation of each test method in the class.
     }
+    
+    func testApiStatus(apiStatus : String) {
+        XCTAssertEqual(apiStatus, "success")
+    }
 
+    func testEmployeeListViewModelMethodGetEmployeeFullName(apiStatus : String) {
+        XCTAssertEqual(employeeListViewModel.getEmployeeFullName(indexPath: indexPath), "Tiger Nixon")
+    }
+    
+    func testEmployeeListViewModelMethodGetEmployeeAge(apiStatus : String) {
+         XCTAssertEqual(employeeListViewModel.getEmployeeAge(indexPath: indexPath), "61")
+    }
+    
+    func testEmployeeListViewModelMethodGetEmployeeSalary(apiStatus : String) {
+         XCTAssertEqual(employeeListViewModel.getEmployeeSalary(indexPath: indexPath), "320800")
+    }
+    
+    func testEmployeeListViewModelMethodGetNumberOfTotalEmployee(apiStatus : String) {
+         XCTAssertTrue(employeeListViewModel.getNumberOfTotalEmployee(section: 0) != 0)
+    }
+    
     override func tearDown() {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }

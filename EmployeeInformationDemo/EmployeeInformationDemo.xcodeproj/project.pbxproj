@@ -20,6 +20,7 @@
 		D84C27F824697E2200AA135C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D84C27F724697E2200AA135C /* Main.storyboard */; };
 		D84C27FA24697E3300AA135C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D84C27F924697E3300AA135C /* LaunchScreen.storyboard */; };
 		D84C27FD24697F6B00AA135C /* EmployeeListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D84C27FC24697F6B00AA135C /* EmployeeListViewController.swift */; };
+		D891FB03246EEC9700E4B5EE /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D891FB02246EEC9700E4B5EE /* BaseViewController.swift */; };
 		D8D90C2F246E6FFC00A9588B /* CreateNewEmployeeDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8D90C2E246E6FFB00A9588B /* CreateNewEmployeeDataModel.swift */; };
 		D8D90C31246E772700A9588B /* DeleteEmployeeDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8D90C30246E772700A9588B /* DeleteEmployeeDataModel.swift */; };
 		D8FEF0F924695EB800673CA0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8FEF0F824695EB800673CA0 /* AppDelegate.swift */; };
@@ -59,6 +60,7 @@
 		D84C27F724697E2200AA135C /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		D84C27F924697E3300AA135C /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D84C27FC24697F6B00AA135C /* EmployeeListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeeListViewController.swift; sourceTree = "<group>"; };
+		D891FB02246EEC9700E4B5EE /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		D8D90C2E246E6FFB00A9588B /* CreateNewEmployeeDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateNewEmployeeDataModel.swift; sourceTree = "<group>"; };
 		D8D90C30246E772700A9588B /* DeleteEmployeeDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteEmployeeDataModel.swift; sourceTree = "<group>"; };
 		D8FEF0F524695EB800673CA0 /* EmployeeInformationDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EmployeeInformationDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -168,6 +170,7 @@
 			children = (
 				D84C27FC24697F6B00AA135C /* EmployeeListViewController.swift */,
 				D84A0135246A96420044E6F6 /* CreateEmployeeViewController.swift */,
+				D891FB02246EEC9700E4B5EE /* BaseViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -371,6 +374,7 @@
 				D84A0144246BAF0D0044E6F6 /* EmployeeDataModel.swift in Sources */,
 				D84C27FD24697F6B00AA135C /* EmployeeListViewController.swift in Sources */,
 				D8D90C31246E772700A9588B /* DeleteEmployeeDataModel.swift in Sources */,
+				D891FB03246EEC9700E4B5EE /* BaseViewController.swift in Sources */,
 				D8D90C2F246E6FFC00A9588B /* CreateNewEmployeeDataModel.swift in Sources */,
 				D84A0148246BE15A0044E6F6 /* UITextField+DoneButton.swift in Sources */,
 				D84A014A246BF89F0044E6F6 /* CreateEmployeeViewModel.swift in Sources */,

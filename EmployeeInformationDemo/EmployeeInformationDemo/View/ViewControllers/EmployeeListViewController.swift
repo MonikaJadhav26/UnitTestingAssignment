@@ -57,7 +57,7 @@ class EmployeeListViewController: BaseViewController {
 //MARK: - UITableview delegate and datasource methods
 extension EmployeeListViewController : UITableViewDelegate , UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return employeeListViewModel.getNumberOfFacts(section: section)
+        return employeeListViewModel.getNumberOfTotalEmployee(section: section)
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

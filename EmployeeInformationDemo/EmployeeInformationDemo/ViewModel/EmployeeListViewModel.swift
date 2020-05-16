@@ -32,7 +32,7 @@ class EmployeeListViewModel : NSObject {
     
    
     
-    func getNumberOfFacts(section: Int) -> Int {
+    func getNumberOfTotalEmployee(section: Int) -> Int {
         return self.employeeData.count
     }
     

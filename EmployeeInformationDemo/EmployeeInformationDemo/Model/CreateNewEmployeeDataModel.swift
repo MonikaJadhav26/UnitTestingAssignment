@@ -10,13 +10,13 @@ import Foundation
 
 struct CreateNewEmployeeDataModel: Codable {
     let status: String
-    let data: [EmployeeInfo]
+    let data: EmployeeInfo
 }
 
 // MARK: - DataClass
 struct EmployeeInfo: Codable {
-       var name: String?
-       let salary: String?
-       let age: String?
-       let id: String?
+       var name: String
+       let salary: String
+       let age: String
+       let id: Int
 }

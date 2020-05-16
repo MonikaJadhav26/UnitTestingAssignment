@@ -39,7 +39,6 @@ class CreateEmployeeViewController: BaseViewController {
     }
     
     @objc func textFieldDidChange(_ textField: UITextField) {
-        print(textField.text!)
         if !((nameTextField.text)?.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty)! && !((ageTextField.text)?.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty)! && !((salaryTextField.text)?.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty)!{
             createButton.isEnabled = true
             createButton.backgroundColor = Constants.greenButtonColour
@@ -56,7 +55,7 @@ class CreateEmployeeViewController: BaseViewController {
     //MARK: - Create Button Action Method
     @IBAction func createButtonClicked(_ sender: UIButton) {
         
-        let newEmployeeInfo = EmployeeInfo(name: nameTextField.text, salary: salaryTextField.text, age: ageTextField.text, id: "")
+        let newEmployeeInfo = EmployeeInfo(name: nameTextField.text ?? "", salary: String(format: "%d", salaryTextField.text ?? ""), age: String(format: "%d", ageTextField.text ?? ""), id: 0)
         
         createEmployeeViewModel.createNewEmployee(newEmployee: newEmployeeInfo) { result in
                    switch(result) {
