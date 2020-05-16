@@ -62,7 +62,7 @@ class EmployeeListViewController: BaseViewController {
                 self.employeeListTableView.reloadData()
             case .failure(let error):
                 self.hideActivityIndicator()
-                self.showAlert(message: error.localizedDescription, action: UIAlertAction(title: Constants.ok, style: .default, handler: nil))
+                self.showAlert(message: error.localizedDescription, title: Constants.errorTitle, action: UIAlertAction(title: Constants.ok, style: .default, handler: nil))
             }
         }
     }
@@ -101,11 +101,11 @@ extension EmployeeListViewController : UITableViewDelegate , UITableViewDataSour
                         self.employeeListTableView.deleteRows(at: [indexPath], with: .fade)
                         self.employeeListTableView.endUpdates()
                     } else {
-                        self.showAlert(message: result.message, action: UIAlertAction(title: Constants.ok, style: .default, handler: nil))
+                        self.showAlert(message: result.message, title: "Alert" , action: UIAlertAction(title: Constants.ok, style: .default, handler: nil))
                     }
                     
                 case .failure(let error):
-                    self.showAlert(message: error.localizedDescription, action: UIAlertAction(title: Constants.ok, style: .default, handler: nil))
+                    self.showAlert(message: error.localizedDescription, title: Constants.errorTitle , action: UIAlertAction(title: Constants.ok, style: .default, handler: nil))
                 }
             }
         }

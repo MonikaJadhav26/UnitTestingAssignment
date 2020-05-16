@@ -33,10 +33,12 @@ class CreateEmployeeViewController: BaseViewController {
     func setUpUI() {
         self.addActivityIndicator()
         createButton.isEnabled = false
+        self.addRoundedCornerToButton(button : createButton)
         
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self,action: #selector(self.dismissKeyboard))
         tap.cancelsTouchesInView = false
         view.addGestureRecognizer(tap)
+        
         
         self.getTitleForView(navigationTitle: Constants.createNewEmployeeTitle)
         nameTextField.addTarget(self, action: #selector(CreateEmployeeViewController.textFieldDidChange(_:)), for: .editingChanged)
@@ -70,10 +72,10 @@ class CreateEmployeeViewController: BaseViewController {
                    switch(result) {
                    case .success:
                     self.hideActivityIndicator()
-                    self.showAlert(message: "Employee created successfully!", action: UIAlertAction(title: Constants.ok, style: .default, handler: nil))
+                    self.showAlert(message: "Employee created successfully!",title : "Message", action: UIAlertAction(title: Constants.ok, style: .default, handler: nil))
                    case .failure(let error):
                     self.hideActivityIndicator()
-                     self.showAlert(message: error.localizedDescription, action: UIAlertAction(title: Constants.ok, style: .default, handler: nil))
+                    self.showAlert(message: error.localizedDescription, title: Constants.errorTitle, action: UIAlertAction(title: Constants.ok, style: .default, handler: nil))
                    }
                }
     }

@@ -21,8 +21,8 @@ class BaseViewController: UIViewController {
     }
     
     //MARK: - Show Alert
-    func showAlert(message: String, action: UIAlertAction) {
-        let alert = UIAlertController(title: Constants.errorTitle, message: message, preferredStyle: .alert)
+    func showAlert(message: String, title : String, action: UIAlertAction) {
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
         alert.addAction(action)
         self.present(alert, animated: true, completion: nil)
     }
@@ -32,6 +32,7 @@ class BaseViewController: UIViewController {
         self.title = navigationTitle
     }
     
+    //MARK: - Method Activity Indicator
     func addActivityIndicator() {
         activityIndicator = UIActivityIndicatorView(style: UIActivityIndicatorView.Style.gray)
         activityIndicator.center =  CGPoint(x: self.view.bounds.midX, y: self.view.bounds.midY)
@@ -45,5 +46,12 @@ class BaseViewController: UIViewController {
     
     func hideActivityIndicator() {
         activityIndicator.stopAnimating()
+    }
+    
+    //MARK: - Method For Applying Rounded Corners to Button
+    func addRoundedCornerToButton(button : UIButton) {
+        button.layer.cornerRadius = 5
+        button.layer.borderWidth = 1
+        button.layer.borderColor = UIColor.black.cgColor
     }
 }
