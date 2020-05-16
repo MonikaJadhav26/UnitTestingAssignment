@@ -8,12 +8,12 @@
 
 import Foundation
 
-struct EmployeeDataModel: Codable {
+struct EmployeeDataModel: Decodable {
     let status: String
-    let data: [Data]
+    let data: [EmployeeData]
 }
 
-struct Data: Codable {
+struct EmployeeData: Decodable {
     let id: String?
     var employee_name: String?
     let employee_salary: String?

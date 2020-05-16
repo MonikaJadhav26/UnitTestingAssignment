@@ -13,19 +13,6 @@ import UIKit
 
 struct Constants {
     
-    struct BaseURL {
-        static let url = "http://dummy.restapiexample.com"
-    }
-    struct APIMethod {
-        static let getEmployees = "/api/v1/employees"
-        static let createEmployee = "/api/v1/create"
-        static let deleteEmployee = "/api/v1/delete"
-    }
-    
-    static let post = "POST"
-    static let delete = "DELETE"
-    static let applicationJson = "application/json"
-    static let contentType = "Content-Type"
     static let kCellIdentifier = "EmployeeListCell"
     static let employeeListTitle = "Employee List"
     static let createNewEmployeeTitle = "Create New Employee"

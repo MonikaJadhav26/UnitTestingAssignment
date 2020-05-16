@@ -56,7 +56,6 @@ class CreateEmployeeViewController: BaseViewController {
     @IBAction func createButtonClicked(_ sender: UIButton) {
         
         let newEmployeeInfo = EmployeeInfo(name: nameTextField.text ?? "", salary: String(format: "%d", salaryTextField.text ?? ""), age: String(format: "%d", ageTextField.text ?? ""), id: 0)
-        
         createEmployeeViewModel.createNewEmployee(newEmployee: newEmployeeInfo) { result in
                    switch(result) {
                    case .success:

@@ -10,62 +10,52 @@ import Foundation
 
 class APIClient {
     
-    //MARK: - GET Method For Fetching Employee Data from Server
+    //MARK: -  Method For Fetching Employee Data from Server
     func getAllEmployeeList(completion: @escaping (Result<EmployeeDataModel, Error>) -> Void) {
-        let urlString = "\(Constants.BaseURL.url)\(Constants.APIMethod.getEmployees)"
-        guard let serviceURL = URL.init(string: urlString) else { return }
-        URLSession.shared.dataTask(with: serviceURL) { (data, response, error) in
-            if let err = error {
-                completion(.failure(err))
-                print(err.localizedDescription)
-            } else {
-                guard let data = data else { return }
-                let jsonString = String(decoding: data, as: UTF8.self)
-                do {
-                    let results = try JSONDecoder().decode(EmployeeDataModel.self, from: jsonString.data(using: .utf8)!)
-                    completion(.success(results))
-                } catch {
-                    print(error.localizedDescription)
-                    completion(.failure(error))
-                }
+        let urlString = "\(APIConstants.BaseURL.url)\(APIConstants.APIMethodName.getEmployeesList)"
+        performRequestForGETAPI(requestUrl: URL(string: urlString)!,resultType: EmployeeDataModel.self) { result in
+            switch(result) {
+            case .success(let result):
+                completion(.success(result))
+            case .failure(let error):
+                completion(.failure(error))
             }
-            }.resume()
+        }
     }
     
-    //MARK: - POST Method For Creating New Employee
+    //MARK: -  Method For Creating New Employee
     func createNewEmployee(employee: EmployeeInfo, completion: @escaping (Result<CreateNewEmployeeDataModel, Error>) -> Void) {
-        let urlString = "\(Constants.BaseURL.url)\(Constants.APIMethod.createEmployee)"
-        guard let serviceURL = URL.init(string: urlString) else { return }
-        var request = URLRequest(url: serviceURL)
-        request.httpMethod = Constants.post
-        request.addValue(Constants.applicationJson, forHTTPHeaderField: Constants.contentType)
+        let urlString = "\(APIConstants.BaseURL.url)\(APIConstants.APIMethodName.createNewEmployee)"
         guard let body = try? JSONEncoder().encode(employee) else { return }
-        request.httpBody = body
-        URLSession.shared.dataTask(with: request) { (data, response, error) in
-            if let err = error {
-                completion(.failure(err))
-                print(err.localizedDescription)
-            } else {
-                guard let data = data else { return }
-                let jsonString = String(decoding: data, as: UTF8.self)
-                do {
-                    let results = try JSONDecoder().decode(CreateNewEmployeeDataModel.self, from: jsonString.data(using: .utf8)!)
-                    completion(.success(results))
-                } catch {
-                    print(error.localizedDescription)
-                    completion(.failure(error))
-                }
+        performRequestForPOSTAPI(requestUrl: URL(string: urlString)!, requestBody: body, resultType: CreateNewEmployeeDataModel.self) { result in
+            switch(result) {
+            case .success(let result):
+                completion(.success(result))
+            case .failure(let error):
+                completion(.failure(error))
             }
-            }.resume()
+        }
     }
     
-    //MARK: - DELETE Method For Deleting Employee Record
+    //MARK: -  Method For Deleting Employee Record
     func deleteEmployee(employeeID: Int, completion: @escaping (Result<DeleteEmployeeDataModel, Error>) -> Void) {
-        let urlString = "\(Constants.BaseURL.url)\(Constants.APIMethod.deleteEmployee)/\(employeeID)"
-        guard let serviceURL = URL.init(string: urlString) else { return }
-        var request = URLRequest(url: serviceURL)
-        request.httpMethod = Constants.delete
-        request.addValue(Constants.applicationJson, forHTTPHeaderField: Constants.contentType)
+        let urlString = "\(APIConstants.BaseURL.url)\(APIConstants.APIMethodName.deleteEmployee)"
+        performRequestForGETAPI(requestUrl: URL(string: urlString)!,resultType: DeleteEmployeeDataModel.self) { result in
+            switch(result) {
+            case .success(let result):
+                completion(.success(result))
+            case .failure(let error):
+                completion(.failure(error))
+            }
+        }
+    }
+    
+    //MARK: - Private method for POST API
+    private func performRequestForPOSTAPI<T: Decodable>(requestUrl: URL, requestBody: Data, resultType: T.Type, completion: @escaping (Result<T, Error>) -> Void) {
+        var request = URLRequest(url: requestUrl)
+        request.httpMethod = APIConstants.APIMethodType.post
+        request.addValue(APIConstants.HTTPHeaderField.applicationJson.rawValue, forHTTPHeaderField: APIConstants.HTTPHeaderField.contentType.rawValue)
+        request.httpBody = requestBody
         URLSession.shared.dataTask(with: request) { (data, response, error) in
             if let err = error {
                 completion(.failure(err))
@@ -74,7 +64,7 @@ class APIClient {
                 guard let data = data else { return }
                 let jsonString = String(decoding: data, as: UTF8.self)
                 do {
-                    let results = try JSONDecoder().decode(DeleteEmployeeDataModel.self, from: jsonString.data(using: .utf8)!)
+                    let results = try JSONDecoder().decode(T.self, from: jsonString.data(using: .utf8)!)
                     completion(.success(results))
                 } catch {
                     print(error.localizedDescription)
@@ -82,7 +72,24 @@ class APIClient {
                 }
             }
             }.resume()
+}
+    //MARK: - Private methods for GET API
+     private func performRequestForGETAPI<T: Decodable>(requestUrl: URL, resultType: T.Type , completion: @escaping (Result<T, Error>) -> Void) {
+            URLSession.shared.dataTask(with: requestUrl) { (data, response, error) in
+                if let err = error {
+                    completion(.failure(err))
+                    print(err.localizedDescription)
+                } else {
+                    guard let data = data else { return }
+                    let jsonString = String(decoding: data, as: UTF8.self)
+                    do {
+                        let results = try JSONDecoder().decode(T.self, from: jsonString.data(using: .utf8)!)
+                        completion(.success(results))
+                    } catch {
+                        print(error.localizedDescription)
+                        completion(.failure(error))
+                    }
+                }
+                }.resume()
     }
 }
-
-

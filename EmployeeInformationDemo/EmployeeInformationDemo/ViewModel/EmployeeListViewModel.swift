@@ -11,9 +11,9 @@ import Foundation
 class EmployeeListViewModel : NSObject {
     
     var apiCallObject: APIClient = APIClient()
-    var employeeData : [Data] = [Data]()
-    var searchedEmployeeData = [Data]()
-    var originalEmployeeData = [Data]()
+    var employeeData : [EmployeeData] = [EmployeeData]()
+    var searchedEmployeeData = [EmployeeData]()
+    var originalEmployeeData = [EmployeeData]()
     
     func fetchEmployeeData(completion: @escaping (Result<Bool, Error>) -> Void) {
         apiCallObject.getAllEmployeeList { (result) in
