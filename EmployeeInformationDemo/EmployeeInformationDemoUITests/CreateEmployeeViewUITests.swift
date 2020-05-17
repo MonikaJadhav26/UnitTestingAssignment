@@ -8,8 +8,6 @@
 
 import XCTest
 
-
-
 class CreateEmployeeViewUITests: XCTestCase {
   
   let app = XCUIApplication()
@@ -38,11 +36,11 @@ class CreateEmployeeViewUITests: XCTestCase {
     let name = app.textFields["employeeNameTextField"]
     name.tap()
     name.typeText("monika")
-   
+    
     let age = app.textFields["employeeAgeTextField"]
     age.tap()
     age.typeText("24")
-   
+    
     let salary = app.textFields["employeeSalaryTextField"]
     salary.tap()
     salary.typeText("1200")
@@ -59,7 +57,7 @@ class CreateEmployeeViewUITests: XCTestCase {
   
   override func tearDown() {
     // Put teardown code here. This method is called after the invocation of each test method in the class.
-   // createEmployeeView = nil
+    // createEmployeeView = nil
   }
   
   func testExample() {

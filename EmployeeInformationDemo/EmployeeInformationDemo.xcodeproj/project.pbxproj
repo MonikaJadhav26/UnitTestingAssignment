@@ -27,9 +27,11 @@
 		D8DAA3CC24704BE2008875D3 /* EmployeeLocalJSON.json in Resources */ = {isa = PBXBuildFile; fileRef = D8DAA3CB24704BE1008875D3 /* EmployeeLocalJSON.json */; };
 		D8DAA3CE24705233008875D3 /* CreateEmployeeViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8DAA3CD24705233008875D3 /* CreateEmployeeViewModelTests.swift */; };
 		D8DAA3D024705259008875D3 /* EmployeeListViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8DAA3CF24705259008875D3 /* EmployeeListViewModelTests.swift */; };
+		D8DAA3D2247130D1008875D3 /* CreateEmployeeViewUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8DAA3D1247130D1008875D3 /* CreateEmployeeViewUITests.swift */; };
+		D8DAA3D424713705008875D3 /* Validators.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8DAA3D324713705008875D3 /* Validators.swift */; };
 		D8FEF0F924695EB800673CA0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8FEF0F824695EB800673CA0 /* AppDelegate.swift */; };
 		D8FEF10224695EBE00673CA0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D8FEF10124695EBE00673CA0 /* Assets.xcassets */; };
-		D8FEF11B24695EBF00673CA0 /* EmployeeInformationDemoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8FEF11A24695EBF00673CA0 /* EmployeeInformationDemoUITests.swift */; };
+		D8FEF11B24695EBF00673CA0 /* EmployeeListViewUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8FEF11A24695EBF00673CA0 /* EmployeeListViewUITests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -70,6 +72,8 @@
 		D8DAA3CB24704BE1008875D3 /* EmployeeLocalJSON.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = EmployeeLocalJSON.json; sourceTree = "<group>"; };
 		D8DAA3CD24705233008875D3 /* CreateEmployeeViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateEmployeeViewModelTests.swift; sourceTree = "<group>"; };
 		D8DAA3CF24705259008875D3 /* EmployeeListViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeeListViewModelTests.swift; sourceTree = "<group>"; };
+		D8DAA3D1247130D1008875D3 /* CreateEmployeeViewUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateEmployeeViewUITests.swift; sourceTree = "<group>"; };
+		D8DAA3D324713705008875D3 /* Validators.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Validators.swift; sourceTree = "<group>"; };
 		D8FEF0F524695EB800673CA0 /* EmployeeInformationDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EmployeeInformationDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D8FEF0F824695EB800673CA0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D8FEF10124695EBE00673CA0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -77,7 +81,7 @@
 		D8FEF10B24695EBF00673CA0 /* EmployeeInformationDemoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EmployeeInformationDemoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D8FEF11124695EBF00673CA0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D8FEF11624695EBF00673CA0 /* EmployeeInformationDemoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EmployeeInformationDemoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		D8FEF11A24695EBF00673CA0 /* EmployeeInformationDemoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeeInformationDemoUITests.swift; sourceTree = "<group>"; };
+		D8FEF11A24695EBF00673CA0 /* EmployeeListViewUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeeListViewUITests.swift; sourceTree = "<group>"; };
 		D8FEF11C24695EBF00673CA0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -149,6 +153,7 @@
 			children = (
 				D84A013D246A997A0044E6F6 /* Constants.swift */,
 				D84A0147246BE15A0044E6F6 /* UITextField+DoneButton.swift */,
+				D8DAA3D324713705008875D3 /* Validators.swift */,
 				D8DAA3CB24704BE1008875D3 /* EmployeeLocalJSON.json */,
 			);
 			path = Utilities;
@@ -240,8 +245,9 @@
 		D8FEF11924695EBF00673CA0 /* EmployeeInformationDemoUITests */ = {
 			isa = PBXGroup;
 			children = (
-				D8FEF11A24695EBF00673CA0 /* EmployeeInformationDemoUITests.swift */,
+				D8FEF11A24695EBF00673CA0 /* EmployeeListViewUITests.swift */,
 				D8FEF11C24695EBF00673CA0 /* Info.plist */,
+				D8DAA3D1247130D1008875D3 /* CreateEmployeeViewUITests.swift */,
 			);
 			path = EmployeeInformationDemoUITests;
 			sourceTree = "<group>";
@@ -383,6 +389,7 @@
 				D891FB05246FE35E00E4B5EE /* APIConstants.swift in Sources */,
 				D84A0136246A96420044E6F6 /* CreateEmployeeViewController.swift in Sources */,
 				D84A0144246BAF0D0044E6F6 /* EmployeeDataModel.swift in Sources */,
+				D8DAA3D424713705008875D3 /* Validators.swift in Sources */,
 				D84C27FD24697F6B00AA135C /* EmployeeListViewController.swift in Sources */,
 				D8D90C31246E772700A9588B /* DeleteEmployeeDataModel.swift in Sources */,
 				D891FB03246EEC9700E4B5EE /* BaseViewController.swift in Sources */,
@@ -410,7 +417,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D8FEF11B24695EBF00673CA0 /* EmployeeInformationDemoUITests.swift in Sources */,
+				D8DAA3D2247130D1008875D3 /* CreateEmployeeViewUITests.swift in Sources */,
+				D8FEF11B24695EBF00673CA0 /* EmployeeListViewUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
