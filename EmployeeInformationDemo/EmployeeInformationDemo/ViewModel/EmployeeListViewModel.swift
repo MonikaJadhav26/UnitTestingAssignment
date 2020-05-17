@@ -10,11 +10,13 @@ import Foundation
 
 class EmployeeListViewModel : NSObject {
     
+    //MARK: - Variables
     var apiCallObject: APIClient = APIClient()
     var employeeData : [EmployeeData] = [EmployeeData]()
     var searchedEmployeeData = [EmployeeData]()
     var originalEmployeeData = [EmployeeData]()
     
+    //MARK: - Method for fetching all employee data
     func fetchEmployeeData(completion: @escaping (Result<Bool, Error>) -> Void) {
         apiCallObject.getAllEmployeeList { (result) in
             DispatchQueue.main.async {

@@ -10,8 +10,10 @@ import Foundation
 
 class DeleteEmployeeViewModel : NSObject {
 
+    //MARK: - Variables
 var apiCallObject: APIClient = APIClient()
 
+    //MARK: - Delete Employee
 func deleteEmployee(employeeID: Int, completion: @escaping (Result<DeleteEmployeeDataModel, Error>) -> Void) {
     apiCallObject.deleteEmployee(employeeID: employeeID) { (result) in
         DispatchQueue.main.async {

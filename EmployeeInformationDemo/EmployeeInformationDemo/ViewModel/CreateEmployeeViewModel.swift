@@ -11,9 +11,10 @@ import UIKit
 
 class CreateEmployeeViewModel : NSObject {
     
+    //MARK: - Variables
     var apiCallObject: APIClient = APIClient()
     
-    
+    //MARK: - Create new Employee
     func createNewEmployee(newEmployee: EmployeeInfo ,completion: @escaping (Result<Bool, Error>) -> Void) {
         apiCallObject.createNewEmployee(employee: newEmployee) { (result) in
             DispatchQueue.main.async {
@@ -26,7 +27,7 @@ class CreateEmployeeViewModel : NSObject {
             }
         }
     }
-
+       
 }
 
 

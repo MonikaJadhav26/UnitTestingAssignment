@@ -30,4 +30,9 @@ extension UITextField {
     // Default actions:
     @objc func doneButtonTapped() { self.resignFirstResponder() }
     @objc func cancelButtonTapped() { self.resignFirstResponder() }
+    
+    func validatedText(validationType: ValidatorType) throws -> String {
+        let validator = VaildatorFactory.validatorFor(type: validationType)
+        return try validator.validated(self.text!)
+    }
 }

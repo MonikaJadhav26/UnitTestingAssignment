@@ -10,10 +10,10 @@ import UIKit
 
 class BaseViewController: UIViewController {
 
-    
+    //MARK: - Outlets and Variables
     var activityIndicator = UIActivityIndicatorView()
 
-    
+    //MARK: - View Lifecycle Methods
     override func viewDidLoad() {
         super.viewDidLoad()
 
