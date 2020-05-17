@@ -15,8 +15,8 @@ struct CreateNewEmployeeDataModel: Codable {
 
 // MARK: - DataClass
 struct EmployeeInfo: Codable {
-       var name: String
-       let salary: String
-       let age: String
-       let id: Int
+    var name: String
+    let salary: String
+    let age: String
+    let id: Int
 }

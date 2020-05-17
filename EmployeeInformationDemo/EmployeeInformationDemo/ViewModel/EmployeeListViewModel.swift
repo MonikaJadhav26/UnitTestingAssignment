@@ -32,7 +32,7 @@ class EmployeeListViewModel : NSObject {
         }
     }
     
-   
+    
     
     func getNumberOfTotalEmployee(section: Int) -> Int {
         return self.employeeData.count
@@ -46,12 +46,12 @@ class EmployeeListViewModel : NSObject {
         let employeeAge = "\(self.employeeData[indexPath.row].employee_age ?? "") \("years")"
         return employeeAge
     }
-
+    
     func getEmployeeSalary(indexPath: IndexPath) -> String {
         let employeeSalary = "\(self.employeeData[indexPath.row].employee_salary ?? "") \("Rs.")"
         return employeeSalary
     }
-
+    
     func getEmployeeProfileImage(indexPath: IndexPath) -> String {
         let imageURL = self.employeeData[indexPath.row].profile_image
         return imageURL ?? ""

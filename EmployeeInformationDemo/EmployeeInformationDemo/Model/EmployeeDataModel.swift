@@ -19,5 +19,5 @@ struct EmployeeData: Decodable {
     let employee_salary: String?
     let employee_age: String?
     let profile_image: String?
-
+    
 }

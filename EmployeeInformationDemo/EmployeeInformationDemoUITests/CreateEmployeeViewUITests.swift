@@ -9,33 +9,62 @@
 import XCTest
 
 
+
 class CreateEmployeeViewUITests: XCTestCase {
-
-    var app: XCUIApplication!
+  
+  let app = XCUIApplication()
+  
+  override func setUp() {
+    continueAfterFailure = false
+    XCUIApplication().launch()
+  }
+  
+  func testAllTextFieldAndLabelExists() {
+    app.textFields.containing(.staticText, identifier: "Enter employee full name.")
+    app.textFields.containing(.staticText, identifier: "Enter Employee age in years.")
+    app.textFields.containing(.staticText, identifier: "Enter employee salary in rupees.")
+    app.otherElements.containing(.staticText, identifier: "Name")
+    app.otherElements.containing(.staticText, identifier: "Age")
+    app.otherElements.containing(.staticText, identifier: "Salary")
+    app.buttons.containing(.staticText, identifier: "Create")
+    app.navigationBars.containing(.staticText, identifier: "Create New Employee")
+  }
+  
+  func testCreateEmployeeSuccess() throws {
     
-    override func setUp() {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
-
-        // In UI tests it is usually best to stop immediately when a failure occurs.
-        continueAfterFailure = false
-
-        // UI tests must launch the application that they test. Doing this in setup will make sure it happens for each test method.
-        XCUIApplication().launch()
-
-        // In UI tests it’s important to set the initial state - such as interface orientation - required for your tests before they run. The setUp method is a good place to do this.
-    }
+    let app = XCUIApplication()
+    let success = app.staticTexts["Employee created successfully!"]
     
-    func testCreateButtonTap() {
-        XCUIApplication().buttons["Create"].tap()
-    }
-
-    override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-    }
-
-    func testExample() {
-        // Use recording to get started writing UI tests.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-    }
-
+    let name = app.textFields["employeeNameTextField"]
+    name.tap()
+    name.typeText("monika")
+   
+    let age = app.textFields["employeeAgeTextField"]
+    age.tap()
+    age.typeText("24")
+   
+    let salary = app.textFields["employeeSalaryTextField"]
+    salary.tap()
+    salary.typeText("1200")
+    
+    app.buttons["Create"].tap()
+    
+    let exists = NSPredicate(format: "exists == 1")
+    expectation(for: exists, evaluatedWith: success, handler: nil)
+    waitForExpectations(timeout: 5, handler: nil)
+    
+    XCTAssertTrue(success.exists, "Employee created successfully! is displayed")
+    
+  }
+  
+  override func tearDown() {
+    // Put teardown code here. This method is called after the invocation of each test method in the class.
+   // createEmployeeView = nil
+  }
+  
+  func testExample() {
+    // Use recording to get started writing UI tests.
+    // Use XCTAssert and related functions to verify your tests produce the correct results.
+  }
+  
 }

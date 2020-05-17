@@ -31,4 +31,5 @@ struct Constants {
     static let cellLabelTextColor = UIColor(named: "textColour")
     static let grayButtonColour = UIColor(red: 239/255, green: 239/255, blue: 239/255, alpha: 1)
     static let greenButtonColour = UIColor(red: 38/255, green: 146/255, blue: 66/255, alpha: 1)
+    static let accessibilityIdentifierForEmployeeListTable = "Employee List Table"
 }

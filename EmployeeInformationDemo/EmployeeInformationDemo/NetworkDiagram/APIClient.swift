@@ -11,6 +11,7 @@ import Foundation
 class APIClient {
     
     //MARK: -  Method For Fetching Employee Data from Server
+  /// "Result" type is used for fecting response success or failure
     func getAllEmployeeList(completion: @escaping (Result<EmployeeDataModel, Error>) -> Void) {
         let urlString = "\(APIConstants.BaseURL.url)\(APIConstants.APIMethodName.getEmployeesList)"
         performRequestForGETAPI(requestUrl: URL(string: urlString)!,resultType: EmployeeDataModel.self) { result in
@@ -71,25 +72,25 @@ class APIClient {
                     completion(.failure(error))
                 }
             }
-            }.resume()
-}
+        }.resume()
+    }
     //MARK: - Private methods for GET API
-     private func performRequestForGETAPI<T: Decodable>(requestUrl: URL, resultType: T.Type , completion: @escaping (Result<T, Error>) -> Void) {
-            URLSession.shared.dataTask(with: requestUrl) { (data, response, error) in
-                if let err = error {
-                    completion(.failure(err))
-                    print(err.localizedDescription)
-                } else {
-                    guard let data = data else { return }
-                    let jsonString = String(decoding: data, as: UTF8.self)
-                    do {
-                        let results = try JSONDecoder().decode(T.self, from: jsonString.data(using: .utf8)!)
-                        completion(.success(results))
-                    } catch {
-                        print(error.localizedDescription)
-                        completion(.failure(error))
-                    }
+    private func performRequestForGETAPI<T: Decodable>(requestUrl: URL, resultType: T.Type , completion: @escaping (Result<T, Error>) -> Void) {
+        URLSession.shared.dataTask(with: requestUrl) { (data, response, error) in
+            if let err = error {
+                completion(.failure(err))
+                print(err.localizedDescription)
+            } else {
+                guard let data = data else { return }
+                let jsonString = String(decoding: data, as: UTF8.self)
+                do {
+                    let results = try JSONDecoder().decode(T.self, from: jsonString.data(using: .utf8)!)
+                    completion(.success(results))
+                } catch {
+                    print(error.localizedDescription)
+                    completion(.failure(error))
                 }
-                }.resume()
+            }
+        }.resume()
     }
 }
