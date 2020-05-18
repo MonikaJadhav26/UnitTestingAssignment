@@ -40,7 +40,8 @@
                                             <color key="backgroundColor" name="backViewColour"/>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" name="backViewColour"/>
-                                        <accessibility key="accessibilityConfiguration" identifier="Employee List Cell">
+                                        <accessibility key="accessibilityConfiguration">
+                                            <accessibilityTraits key="traits" staticText="YES"/>
                                             <bool key="isElement" value="YES"/>
                                         </accessibility>
                                     </tableViewCell>
@@ -72,6 +73,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="employeeListTableView" destination="gVR-js-i9X" id="20f-tl-fZr"/>
+                        <outlet property="searchBar" destination="hLb-Ov-z4M" id="B1y-hJ-jDt"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -126,7 +128,10 @@
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter employee full name." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ips-2D-McS">
                                 <rect key="frame" x="16" y="108" width="382" height="45.5"/>
                                 <color key="backgroundColor" name="textFieldBackgroundColour"/>
-                                <accessibility key="accessibilityConfiguration" identifier="nameTextField"/>
+                                <accessibility key="accessibilityConfiguration" identifier="nameTextField">
+                                    <accessibilityTraits key="traits" none="YES"/>
+                                    <bool key="isElement" value="YES"/>
+                                </accessibility>
                                 <color key="textColor" name="grayTextColour"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -137,7 +142,9 @@
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter employee age in years." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="v1i-QH-fLw">
                                 <rect key="frame" x="16" y="207" width="382" height="45.5"/>
                                 <color key="backgroundColor" name="textFieldBackgroundColour"/>
-                                <accessibility key="accessibilityConfiguration" identifier="employeeAgeTextField"/>
+                                <accessibility key="accessibilityConfiguration" identifier="ageTextField">
+                                    <accessibilityTraits key="traits" none="YES"/>
+                                </accessibility>
                                 <color key="textColor" name="grayTextColour"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <textInputTraits key="textInputTraits" keyboardType="numberPad" returnKeyType="done"/>
@@ -148,7 +155,7 @@
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter employee salary in rupees." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="LZM-G0-qdR">
                                 <rect key="frame" x="16" y="304" width="382" height="45.5"/>
                                 <color key="backgroundColor" name="textFieldBackgroundColour"/>
-                                <accessibility key="accessibilityConfiguration" identifier="employeeSalaryTextField"/>
+                                <accessibility key="accessibilityConfiguration" identifier="salaryTextField"/>
                                 <color key="textColor" name="grayTextColour"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <textInputTraits key="textInputTraits" keyboardType="numberPad" returnKeyType="done"/>
@@ -160,7 +167,7 @@
                                 <rect key="frame" x="16" y="429.5" width="382" height="40"/>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <accessibility key="accessibilityConfiguration">
-                                    <bool key="isElement" value="NO"/>
+                                    <accessibilityTraits key="traits" button="YES" staticText="YES"/>
                                 </accessibility>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
                                 <state key="normal" title="Create">

@@ -14,6 +14,8 @@ class EmployeeListViewController: BaseViewController {
   @IBOutlet weak var employeeListTableView: UITableView!
   var employeeListViewModel = EmployeeListViewModel()
   var deleteEmployeeViewModel = DeleteEmployeeViewModel()
+  @IBOutlet weak var searchBar: UISearchBar!
+
   
   //MARK: - View Lifecycle Methods
   override func viewDidLoad() {
@@ -30,6 +32,8 @@ class EmployeeListViewController: BaseViewController {
   //MARK: - Method for UI setup
   func setUpUI() {
     
+    searchBar.isAccessibilityElement = true
+    searchBar.accessibilityIdentifier = "SearchBar"
     employeeListTableView.isAccessibilityElement = true
     employeeListTableView.accessibilityIdentifier = Constants.accessibilityIdentifierForEmployeeListTable
     employeeListTableView.rowHeight = UITableView.automaticDimension
@@ -81,6 +85,7 @@ extension EmployeeListViewController : UITableViewDelegate , UITableViewDataSour
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
    
     let cell = tableView.dequeueReusableCell(withIdentifier: Constants.kCellIdentifier, for: indexPath) as! EmployeeListTableViewCell
+    cell.accessibilityIdentifier = "employeeCell_\(indexPath.row)"
     cell.employeeNameLabel.text = employeeListViewModel.getEmployeeFullName(indexPath: indexPath)
     cell.employeeAgeLabel.text = employeeListViewModel.getEmployeeAge(indexPath: indexPath)
     cell.employeeSalaryLabel.text = employeeListViewModel.getEmployeeSalary(indexPath: indexPath)

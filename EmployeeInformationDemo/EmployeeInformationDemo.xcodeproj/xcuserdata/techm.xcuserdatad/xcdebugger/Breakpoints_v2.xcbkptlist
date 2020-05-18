@@ -3,4 +3,133 @@
    uuid = "2D8CB684-C1B1-4E57-9308-507F122B1EF3"
    type = "1"
    version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "B4D1FC7E-1067-4776-86E8-660F8A3161AA"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "EmployeeInformationDemo/NetworkDiagram/APIClient.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "42"
+            endingLineNumber = "42"
+            landmarkName = "deleteEmployee(employeeID:completion:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "A1B0682D-7C96-4161-84F2-7B69760D6A35"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "EmployeeInformationDemo/NetworkDiagram/APIClient.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "44"
+            endingLineNumber = "44"
+            landmarkName = "deleteEmployee(employeeID:completion:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "A1B0682D-7C96-4161-84F2-7B69760D6A35 - da6117653d73cc88"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "EmployeeInformationDemo.APIClient.deleteEmployee(employeeID: Swift.Int, completion: (Swift.Result&lt;EmployeeInformationDemo.DeleteEmployeeDataModel, Swift.Error&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "EmployeeInformationDemo"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/techm/UnitTestingAssignment/EmployeeInformationDemo/EmployeeInformationDemo/NetworkDiagram/APIClient.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "44"
+                  endingLineNumber = "44"
+                  offsetFromSymbolStart = "728">
+               </Location>
+               <Location
+                  uuid = "A1B0682D-7C96-4161-84F2-7B69760D6A35 - a8d83675cc25a6ed"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Result&lt;EmployeeInformationDemo.DeleteEmployeeDataModel, Swift.Error&gt;) -&gt; () in EmployeeInformationDemo.APIClient.deleteEmployee(employeeID: Swift.Int, completion: (Swift.Result&lt;EmployeeInformationDemo.DeleteEmployeeDataModel, Swift.Error&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "EmployeeInformationDemo"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/techm/UnitTestingAssignment/EmployeeInformationDemo/EmployeeInformationDemo/NetworkDiagram/APIClient.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "46"
+                  endingLineNumber = "46"
+                  offsetFromSymbolStart = "161">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "89105ABB-FF79-4695-B822-EAA4D1393290"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "EmployeeInformationDemo/NetworkDiagram/APIClient.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "45"
+            endingLineNumber = "45"
+            landmarkName = "deleteEmployee(employeeID:completion:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "89105ABB-FF79-4695-B822-EAA4D1393290 - a8d83675cc25a6ed"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Result&lt;EmployeeInformationDemo.DeleteEmployeeDataModel, Swift.Error&gt;) -&gt; () in EmployeeInformationDemo.APIClient.deleteEmployee(employeeID: Swift.Int, completion: (Swift.Result&lt;EmployeeInformationDemo.DeleteEmployeeDataModel, Swift.Error&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "EmployeeInformationDemo"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/techm/UnitTestingAssignment/EmployeeInformationDemo/EmployeeInformationDemo/NetworkDiagram/APIClient.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "46"
+                  endingLineNumber = "46"
+                  offsetFromSymbolStart = "161">
+               </Location>
+               <Location
+                  uuid = "89105ABB-FF79-4695-B822-EAA4D1393290 - a8d83675cc25a6ed"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Result&lt;EmployeeInformationDemo.DeleteEmployeeDataModel, Swift.Error&gt;) -&gt; () in EmployeeInformationDemo.APIClient.deleteEmployee(employeeID: Swift.Int, completion: (Swift.Result&lt;EmployeeInformationDemo.DeleteEmployeeDataModel, Swift.Error&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "EmployeeInformationDemo"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/techm/UnitTestingAssignment/EmployeeInformationDemo/EmployeeInformationDemo/NetworkDiagram/APIClient.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "46"
+                  endingLineNumber = "46"
+                  offsetFromSymbolStart = "190">
+               </Location>
+               <Location
+                  uuid = "89105ABB-FF79-4695-B822-EAA4D1393290 - a8d83675cc25a6ed"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Result&lt;EmployeeInformationDemo.DeleteEmployeeDataModel, Swift.Error&gt;) -&gt; () in EmployeeInformationDemo.APIClient.deleteEmployee(employeeID: Swift.Int, completion: (Swift.Result&lt;EmployeeInformationDemo.DeleteEmployeeDataModel, Swift.Error&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "EmployeeInformationDemo"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/techm/UnitTestingAssignment/EmployeeInformationDemo/EmployeeInformationDemo/NetworkDiagram/APIClient.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "46"
+                  endingLineNumber = "46"
+                  offsetFromSymbolStart = "527">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
 </Bucket>

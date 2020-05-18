@@ -29,6 +29,8 @@
 		D8DAA3D024705259008875D3 /* EmployeeListViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8DAA3CF24705259008875D3 /* EmployeeListViewModelTests.swift */; };
 		D8DAA3D2247130D1008875D3 /* CreateEmployeeViewUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8DAA3D1247130D1008875D3 /* CreateEmployeeViewUITests.swift */; };
 		D8DAA3D424713705008875D3 /* Validators.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8DAA3D324713705008875D3 /* Validators.swift */; };
+		D8FDF93A2472796E00E6E33E /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = D84A013D246A997A0044E6F6 /* Constants.swift */; };
+		D8FDF93B2472796F00E6E33E /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = D84A013D246A997A0044E6F6 /* Constants.swift */; };
 		D8FEF0F924695EB800673CA0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8FEF0F824695EB800673CA0 /* AppDelegate.swift */; };
 		D8FEF10224695EBE00673CA0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D8FEF10124695EBE00673CA0 /* Assets.xcassets */; };
 		D8FEF11B24695EBF00673CA0 /* EmployeeListViewUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8FEF11A24695EBF00673CA0 /* EmployeeListViewUITests.swift */; };
@@ -410,6 +412,7 @@
 			files = (
 				D8DAA3CE24705233008875D3 /* CreateEmployeeViewModelTests.swift in Sources */,
 				D8DAA3D024705259008875D3 /* EmployeeListViewModelTests.swift in Sources */,
+				D8FDF93B2472796F00E6E33E /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -419,6 +422,7 @@
 			files = (
 				D8DAA3D2247130D1008875D3 /* CreateEmployeeViewUITests.swift in Sources */,
 				D8FEF11B24695EBF00673CA0 /* EmployeeListViewUITests.swift in Sources */,
+				D8FDF93A2472796E00E6E33E /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -558,7 +562,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = EmployeeInformationDemo/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -576,7 +580,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = EmployeeInformationDemo/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

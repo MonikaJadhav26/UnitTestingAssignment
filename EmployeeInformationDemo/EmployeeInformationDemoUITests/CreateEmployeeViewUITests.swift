@@ -28,24 +28,91 @@ class CreateEmployeeViewUITests: XCTestCase {
     app.navigationBars.containing(.staticText, identifier: "Create New Employee")
   }
   
-  func testCreateEmployeeSuccess() throws {
-    
-    let app = XCUIApplication()
+  
+  func testCreateEmployeeSuccessResult()  {
     let success = app.staticTexts["Employee created successfully!"]
+    app.navigationBars["Employee List"].buttons["Add"].tap()
     
-    let name = app.textFields["employeeNameTextField"]
+    let name = app.textFields["nameTextField"]
+    XCTAssertTrue(name.exists)
     name.tap()
-    name.typeText("monika")
+    name.typeText("Monika")
     
-    let age = app.textFields["employeeAgeTextField"]
+    let age = app.textFields["ageTextField"]
+    XCTAssertTrue(age.exists)
     age.tap()
-    age.typeText("24")
+    age.typeText("29")
     
-    let salary = app.textFields["employeeSalaryTextField"]
+    let salary = app.textFields["salaryTextField"]
+    XCTAssertTrue(salary.exists)
     salary.tap()
-    salary.typeText("1200")
+    salary.typeText("60000")
     
-    app.buttons["Create"].tap()
+    let createButton = app.buttons["Create"]
+    XCTAssertTrue(createButton.exists)
+    createButton.tap()
+    
+    let exists = NSPredicate(format: "exists == 1")
+    expectation(for: exists, evaluatedWith: success, handler: nil)
+    waitForExpectations(timeout: 5, handler: nil)
+    
+    XCTAssertTrue(success.exists, "Employee created successfully! is displayed")
+    
+  }
+  
+  func testInvalidEmployeeNameResult()  {
+    let success = app.staticTexts["Employee name must contain more than four characters"]
+    app.navigationBars["Employee List"].buttons["Add"].tap()
+    
+    let name = app.textFields["nameTextField"]
+    XCTAssertTrue(name.exists)
+    name.tap()
+    name.typeText("Mo")
+    
+    let age = app.textFields["ageTextField"]
+    XCTAssertTrue(age.exists)
+    age.tap()
+    age.typeText("29")
+    
+    let salary = app.textFields["salaryTextField"]
+    XCTAssertTrue(salary.exists)
+    salary.tap()
+    salary.typeText("60000")
+    
+    let createButton = app.buttons["Create"]
+    XCTAssertTrue(createButton.exists)
+    createButton.tap()
+    
+    let exists = NSPredicate(format: "exists == 1")
+    expectation(for: exists, evaluatedWith: success, handler: nil)
+    waitForExpectations(timeout: 5, handler: nil)
+    
+    XCTAssertTrue(success.exists, "Employee created successfully! is displayed")
+    
+  }
+  
+  func testInvalidEmployeeAgeResult()  {
+    let success = app.staticTexts["Age must be a number!"]
+    app.navigationBars["Employee List"].buttons["Add"].tap()
+    
+    let name = app.textFields["nameTextField"]
+    XCTAssertTrue(name.exists)
+    name.tap()
+    name.typeText("Monika")
+    
+    let age = app.textFields["ageTextField"]
+    XCTAssertTrue(age.exists)
+    age.tap()
+    age.typeText("four")
+    
+    let salary = app.textFields["salaryTextField"]
+    XCTAssertTrue(salary.exists)
+    salary.tap()
+    salary.typeText("60000")
+    
+    let createButton = app.buttons["Create"]
+    XCTAssertTrue(createButton.exists)
+    createButton.tap()
     
     let exists = NSPredicate(format: "exists == 1")
     expectation(for: exists, evaluatedWith: success, handler: nil)

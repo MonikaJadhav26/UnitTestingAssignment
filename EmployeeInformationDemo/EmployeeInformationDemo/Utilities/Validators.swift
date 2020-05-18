@@ -75,15 +75,15 @@ struct RequiredFieldValidator: ValidatorConvertible {
 
 struct EmployeeNameValidator: ValidatorConvertible {
     func validated(_ value: String) throws -> String {
-        guard value.count >= 3 else {
-            throw ValidationError("Employee name must contain more than three characters" )
+        guard value.count >= 4 else {
+            throw ValidationError("Employee name must contain more than four characters" )
         }
-        guard value.count < 18 else {
-            throw ValidationError("Employee name shoudn't conain more than 18 characters" )
+        guard value.count < 25 else {
+            throw ValidationError("Employee name shoudn't conain more than 25 characters" )
         }
         
         do {
-            if try NSRegularExpression(pattern: "^[a-z]{1,18}$",  options: .caseInsensitive).firstMatch(in: value, options: [], range: NSRange(location: 0, length: value.count)) == nil {
+            if try NSRegularExpression(pattern: "^[a-zA-Z][a-zA-Z /\\;:.,()]*",  options: .caseInsensitive).firstMatch(in: value, options: [], range: NSRange(location: 0, length: value.count)) == nil {
                 throw ValidationError("Invalid Employee name, Employee name should not contain whitespaces, numbers or special characters")
             }
         } catch {

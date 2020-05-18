@@ -42,11 +42,6 @@ class EmployeeListViewUITests: XCTestCase {
     app.navigationBars.containing(.staticText, identifier: "Employee List")
   }
   
-  func testEmployeeListTableContainsCell() {
-    let employeeList = app.tables.matching(identifier: "Employee List Table")
-    let employeeCell = employeeList.cells.element(matching: .cell, identifier: "Employee List Cell")
-    employeeCell.tap()
-  }
   
   func testLaunchPerformance() {
     if #available(macOS 10.15, iOS 13.0, tvOS 13.0, *) {
